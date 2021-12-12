@@ -2,7 +2,7 @@ const options = ['rock', 'paper', 'scissors']
 
 const computerPlay = function(){
   const randomChoice = Math.floor(Math.random()*3)
-  const computerChoice = options[randomChoice].toUpperCase()
+  const computerChoice = options[randomChoice].toLowerCase()
   return computerChoice
 }
 
@@ -10,28 +10,29 @@ const computerPlay = function(){
 
 const playRound = function(){
   const computerChoice = computerPlay();
-  let playerChoice = prompt('enter your choice').toUpperCase()
-  if (playerChoice !== "ROCK" && playerChoice !== "SCISSORS" && playerChoice !=="PAPER"){
-    playerChoice = prompt('please enter a valid choice').toUpperCase()
+  let playerChoice = prompt('enter your choice').toLowerCase()
+  if (playerChoice !== "rock" && playerChoice !== "scissors" && playerChoice !=="paper"){
+    playerChoice = prompt('please enter a valid choice').toLowerCase()
   }
   console.log('you chose - ' + playerChoice)
   console.log('the computer chose - ' + computerChoice)
   if (playerChoice === computerChoice) {
-    result = "it's a draw"
-  } else if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
-    result = 'you win'
-  } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
-    result = 'you win'
-  } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
-    result = 'you win'
+    return result = "it's a draw"
+  } else if (playerChoice === "rock" && computerChoice === "scissors") {
+    return result = 'you win'
+  } else if (playerChoice === "scissors" && computerChoice === "paper") {
+    return result = 'you win'
+  } else if (playerChoice === "paper" && computerChoice === "rock") {
+    return result = 'you win'
   } else {
-    result = 'you lose'
+    return result = 'you lose'
     }
-  console.log(result)
+
 }
 
 const game = function(){
   for(let step=0; step<5; step++){
     playRound()
+    console.log(result)
   }
 }
